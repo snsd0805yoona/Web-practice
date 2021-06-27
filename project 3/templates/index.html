@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+      <title>Comet Theater</title>
+      <meta name="description" content="This is a webpage of movie theater.">
+      <meta name="robots" content="index, follow">
+      <!--Google font-->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200;500&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Recursive&display=swap" rel="stylesheet">
+      <!-- CSS only -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+      
+      
+      <link rel="stylesheet" href="/static/css/style.css">
+      <!-- JavaScript Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+      <!-- JQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="/static/js/index.js"></script>
+  </head>
+  <body>
+    <!--header-->
+    <header>
+      <div class="logo">
+        <img src="/static/icons/white-meteor.png" alt="Logo">
+        <a href="/templates/index.html" class="logo">Comet Theater</a>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="/showSignUp">Sign Up</a></li>
+          <li><button id="signinLink">Sign in</button></li>
+        </ul>
+      </nav>
+    </header>
+    <!--main content-->
+    <main>
+      <div id="Login-container" class="modal">
+        <!-- <form class="modal-content" action="/login" method=POST> -->
+        <form class="modal-content" action="/validateLogin" method="post">
+          <div class="Login-form">
+
+            <div class="Login--form">
+              <div class="forms__email-container">
+                <input name="inputEmail" type="email" class="txt--tiny form-control" placeholder="Email" aria-required="true" required>
+              </div>
+            </div>
+
+            <div class="Login--form">
+              <div class="Pasword">
+                <input name="inputPassword" type="password" class="txt--tiny form-control" placeholder="Password" aria-required="true"  required>
+              </div>
+            </div>
+
+            <div class="buttonContainer">
+              <div class="submitBtn">
+                <button id="Login--submit" type="submit">Login</button>
+              </div>
+              <div class="cancelBtn">
+                <button id="Login--cancel" type="button" class="btn">Cancel</button>
+              </div>
+            </div>
+            
+            </div>
+        </form>
+      </div>
+      <div>
+        <div class="content">
+          <section class="image">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="/static/images/movies.jpg" class="d-block w-100" alt="Movies">
+                </div>
+                <div class="carousel-item">
+                  <img src="/static/images/MovieTheaterSeat.jpg" class="d-block w-100" alt="Theater">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h4 class="us">Our Theater</h4>
+                    <p class="usdes">We devote to give you the best experience in our Theater.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="/static/images/Hollywood.jpg" class="d-block w-100" alt="HollywoodS">
+                  <div class="carousel-caption d-none d-md-block">
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </section>
+          <div class="movieContainer">
+              <section class="now">
+                  <h2>Now Playing</h2>
+                  <div class="line"></div>
+              </section>
+              
+              <div class="movies">
+                <div class="card" style="width: 18rem;">
+                  <img src="/static/images/Endgame.jpg" class="card-img-top" alt="Endgame">
+                </div>
+                <div class="card" style="width: 18rem;">
+                  <img src="/static/images/Legally Blonde.jpg" class="card-img-top" alt="Legally Blonde">
+                </div>
+                <div class="card" style="width: 18rem;">
+                  <img src="/static/images/Meet the Fockers.jpg" class="card-img-top" alt="Meet the Fockers">
+                </div>
+                <div class="card" style="width: 18rem;">
+                  <img src="/static/images/The Intern.jpg" class="card-img-top" alt="The intern">
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <button onclick="topFunction()" id="top" title="Go to top"><img src="/static/icons/top.svg" alt="back to top"></button>
+      <footer>
+        <div class="container">
+          <p class="m-0 text-center text-black">Copyright &copy; CS6314.002-Team26 2021</p>
+        </div>
+      </footer>
+  </body>
+</html>

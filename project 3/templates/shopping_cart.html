@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+      <title>Comet Theater</title>
+      <meta name="description" content="This is a webpage of movie theater.">
+      <meta name="robots" content="index, follow">
+      <!--Google font-->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200;500&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Recursive&display=swap" rel="stylesheet">
+      <!-- CSS only -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+      
+      
+      <link rel="stylesheet" href="/static/css/style.css">
+      <!-- JavaScript Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+      <!-- JQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="/static/js/index.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <img src="/static/icons/white-meteor.png" alt="Logo">
+          <a href="/" class="logo">Comet Theater</a>
+        </div>
+  
+        <nav>
+          <ul>
+            <li><a href="/allMovies">See A Movie</a></li>
+            <li><a href="/userHome">My account</li>
+            <li><a href="/logout">Log Out</a></li>
+            <li><a href="/showCart"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-fill" viewBox="0 1 16 16">
+              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg></a></li>
+          </ul>
+        </nav>
+      </header>
+</body>
+<table>
+    <main>
+        <div class="container">
+            <div class="shopList" id="shopList">
+                <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item">Item</li>
+                    <li class="list-group-item">QTY</li>
+                    <li class="list-group-item">Price</li>
+                    <li class="list-group-item">Edit or Delete</li>
+                  </ul>
+                  {% for data in data %}
+                  <ul class="list-group list-group-horizontal-sm">
+                    <li class="list-group-item">{{data[1]}}</li>
+                    <li class="list-group-item">{{data[2]}}</li>
+                    <li class="list-group-item">{{data[3]}}</li>
+                    <li class="list-group-item"><a href="/Cartedit/{{data[0]}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                      </svg></a> <a href="/Cartdelete/{{data[0]}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                      </svg></a></li>
+                  </ul>
+                  {% endfor %}
+            </div>
+            <div class="line"></div>
+            <div class="OrderSum">
+                <div class="bg-light p-5" style="border-left: 1px; border-right: 1px;">
+                    <h4 class="mb-4">Order Summary</h4>
+                    <hr>
+                    <!-- Subtotal -->
+                    <div class="row">
+                        <div class="col-6">
+                            <h6 class="text-left">Subtotal</h6 class="text-left">
+                        </div>
+                        <div class="col-6">
+                            <p class="text-right">{{sum}}</p>
+                        </div>
+                    </div>
+        
+        
+        
+                    <!-- Tax -->
+                    <div class="row">
+                        <div class="col-6">
+                            <h6 class="text-left">Tax</h6 class="text-left">
+                        </div>
+                        <div class="col-6">
+                            <p class="text-right">{{sum*0.05}}</p>
+                        </div>
+                    </div>
+                    <hr>
+        
+                    <!-- Total -->
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="text-left">Total</h5>
+                        </div>
+                        <div class="col-6">
+                            <h5 class="text-right">{{sum+sum*0.05}}</h5>
+                        </div>
+                    </div>
+        
+                    <a href="/checkout" class="btn btn-secondary my-4 mt-5 w-100 large">
+                        <h5 class="my-1">Check Out</h5>
+                    </a>
+                    <!-- /.col summary -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <button onclick="topFunction()" id="top" title="Go to top"><img src="/static/icons/top.svg" alt="back to top"></button>
+    <footer>
+        <div class="container">
+          <p class="m-0 text-center text-black">Copyright &copy; CS6314.002-Team26 2021</p>
+        </div>
+      </footer>
+</html>

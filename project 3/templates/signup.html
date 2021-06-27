@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comet Theater</title>
+    <meta name="description" content="This is a webpage of movie theater.">
+      <meta name="robots" content="index, follow">
+      <!--Google font-->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200;500&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Recursive&display=swap" rel="stylesheet">
+      <!-- CSS only -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+      
+      
+      <link rel="stylesheet" href="/static/css/style.css">
+      <link rel="stylesheet" href="/static/css/signup.css">
+      <!-- JavaScript Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+      <!-- JQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="/static/js/index.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <img src="/static/icons/white-meteor.png" alt="Logo">
+          <a href="/" class="logo">Comet Theater</a>
+        </div>
+  
+        <nav>
+          <ul>
+            <li><a href="/showSignUp">Sign Up</a></li>
+            <li><button id="signinLink">Sign in</button></li>
+          </ul>
+        </nav>
+      </header>
+    <main>
+        <div id="Login-container" class="modal">
+            <!-- <form class="modal-content" action="/login" method=POST> -->
+            <form class="modal-content" action="/validateLogin" method="post">
+              <div class="Login-form">
+    
+                <div class="Login--form">
+                  <div class="forms__email-container">
+                    <input name="inputEmail" type="email" class="txt--tiny form-control" placeholder="Email" aria-required="true" required>
+                  </div>
+                </div>
+    
+                <div class="Login--form">
+                  <div class="Pasword">
+                    <input name="inputPassword" type="password" class="txt--tiny form-control" placeholder="Password" aria-required="true"  required>
+                  </div>
+                </div>
+    
+                <div class="buttonContainer">
+                  <div class="submitBtn">
+                    <button id="Login--submit" type="submit">Login</button>
+                  </div>
+                  <div class="cancelBtn">
+                    <button id="Login--cancel" type="button" class="btn">Cancel</button>
+                  </div>
+                </div>
+                
+                </div>
+            </form>
+          </div>
+        <div class="jumbotron">
+            <form class="form-signin" action="/signUp" method="post">
+            <label for="inputName" class="sr-only">Username</label>
+            <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
+            <small id="emailHelp" class="form-text text-muted">The password should contain at least on uppercase, lowercase, digit and one special character(i.e @, $). The length should be at least 8.</small>
+            <span id="StrengthDisp" class="badge displayBadge">Weak</span>
+            <label for="inputPassword" class="sr-only">Phone</label>
+            <input type="phone" name="phone" id="phone" class="form-control" placeholder="phone">
+            
+            <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+          </form>
+          </div>
+    </main>
+</body>
+<script src="/static/js/check.js"></script>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comet Theater</title>
+    <meta name="description" content="This is a webpage of movie theater.">
+      <meta name="robots" content="index, follow">
+      <!--Google font-->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200;500&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Recursive&display=swap" rel="stylesheet">
+      <!-- CSS only -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+      
+      
+      <link rel="stylesheet" href="/static/css/style.css">
+      <!-- JavaScript Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+      <!-- JQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="/static/js/index.js"></script>
+  </head>
+  <body>
+    <!--header-->
+    <header>
+      <div class="logo">
+        <img src="/static/icons/white-meteor.png" alt="Logo">
+        <a href="/" class="logo">Comet Theater</a>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="/allMovies">See A Movie</a></li>
+          <li><a href="/userHome">My account</li>
+          <li><a href="/logout">Log Out</a></li>
+          <li><a href="/showCart"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-fill" viewBox="0 1 16 16">
+            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+          </svg></a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+        <section class="left">
+          <ul class="list-group">
+            <li class="list-group-item active"><a class="active" href="">Order History</a></li>
+          </ul>
+        </section>
+        <section class="right">
+            <div>
+                <table class="table">
+                    <thead class="thead-light">
+                      <tr>
+                        <th scope="col">Order Date</th>
+                        <th scope="col">Order Total</th>
+             
+                      </tr>
+                    </thead>
+                    <tbody id="ordersInfo">
+                      {% for history in history %}
+                      <!-- Order One -->
+                      <tr>
+                        <td>{{history[1]}}</td>
+                        <td>{{history[2]}}</td>
+                      </tr>
+                      <tr id="item-show-orderID " class="item-show">
+                        <td colspan="4">
+                          <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5" style="margin-bottom: 6px;">
+                              <div class="row">
+                                <div class="col-sm-5">
+                                  <img src="/static/images/{{history[6]}} " class="w-100">
+                                </div>
+                                <div class="col-sm-6">
+                                  <h6> {{history[3]}}</h6>
+                                  <p>Description: {{history[7]}}</p>
+                                  <p>QTY:  {{history[4]}} </p>
+                                  <p>PRICE: $ {{history[5]}} </p>
+                                </div>
+                              </div>
+                             
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      {% endfor %} 
+                    </tbody>
+                  </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+          <p class="m-0 text-center text-black">Copyright &copy; CS6314.002-Team26 2021</p>
+        </div>
+      </footer>
+</body>
+</html>
